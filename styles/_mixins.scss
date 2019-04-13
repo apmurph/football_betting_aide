@@ -1,0 +1,8 @@
+
+// ==========================================
+@mixin span($left){
+	transition: 0.5s;
+	opacity: 0;
+	position: absolute;
+	left: $left;
+}

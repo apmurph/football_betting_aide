@@ -1,0 +1,759 @@
+@import 'variables';
+@import 'normalize';
+@import 'mixins';
+
+body {
+    .skip-link {
+        position: absolute;
+        left: -1000px;
+        top: 5px;
+        z-index: 999;
+        background: white;
+        color: black;
+        padding: 5px;
+    }
+}
+
+header {
+    height: 100vh;
+    background: #F5F5F5;
+    position: relative;
+
+    .background {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background: url(../assets/football-pitch.jpg) no-repeat fixed;
+        background-size: 200% 200%;
+        transform: scale(1.2);
+        opacity: 0.5;
+        transition: 2s;
+        animation: Gradient 30s linear 1;
+        animation-fill-mode: forwards;
+    }
+
+    .scaleImage {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .introHeader {
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 1.7rem;
+        letter-spacing: 2;
+        line-height: 1.5;
+        font-weight: 800;
+        margin: 150px 20%;
+        opacity: 1;
+        transition: 3s;
+        color: #000;
+        animation: fadeInHalf 3s ease-in infinite;
+        animation-direction: alternate;
+
+        #skipIntro {
+            position: absolute;
+            color: grey;
+            top: -20%;
+            right: -20%;
+            font-size: 0.8rem;
+            border-bottom: 1px solid grey;
+            letter-spacing: 1.5px;
+        }
+
+        .reveal-text,
+        .reveal-text::after {
+            animation-delay: 2s;
+            animation-iteration-count: 1;
+            animation-duration: 2000ms;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+
+        .reveal-text {
+            position: relative;
+            font-size: 8vw;
+            font-family: monospace;
+            display: block;
+            user-select: none;
+            animation-name: reveal-text;
+            color: #000;
+            white-space: nowrap;
+            cursor: default;
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 999;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 1);
+                border-radius: 10px;
+                transform: scaleX(0);
+                transform-origin: 0 50%;
+                pointer-events: none;
+                animation-name: revealer-text;
+            }
+
+        }
+
+        #messenger {
+            position: absolute;
+            top: 90%;
+            left: 55%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-family: monospace;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+        }
+    }
+
+    .openWebsite {
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family: monospace;
+        margin-left: 50px;
+        opacity: 0.5;
+        transition: 3s;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        animation: fadeInHalf 3s ease-in infinite;
+        animation-direction: alternate;
+
+        span {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+    }
+
+    .keepScrollbar {
+        position: absolute;
+        bottom: -50px;
+        height: 10px;
+        left: 0;
+        right: 0;
+    }
+
+    .transformLogo {
+        opacity: 1;
+        bottom: 60px;
+    }
+}
+
+.hideHeader {
+    animation: hideHeader 1s ease-in 1;
+    animation-fill-mode: forwards;
+}
+
+.openMain {
+    height: 800px;
+    overflow: visible;
+}
+
+main {
+    background: $color-section;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+
+    .overlay {
+        display: fixed;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(29, 29, 31, .6);
+        margin: 0;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+
+        button {
+            position: absolute;
+            top: 22px;
+            left: 17px;
+            opacity: 0;
+        }
+    }
+
+    .active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav {
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background: radial-gradient(circle, #212121 10%, #313131 20%, #313131 70%);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        transition: 1s;
+        z-index: 10;
+
+        div {
+            width: 100px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            z-index: 100;
+            position: relative;
+        }
+
+        .menu {
+            &:hover .floatMenu {
+                opacity: 1;
+                left: 50px;
+                color: white;
+            }
+
+            div {
+                width: 20px;
+                height: 16px;
+                margin: 17px 20px;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    display: block;
+                    margin-bottom: 5px;
+                    border-bottom: 2px solid white;
+                    text-transform: uppercase;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .floatMenu {
+            @include span(45px);
+        }
+
+        span {
+            line-height: 50px;
+        }
+
+        .navHeaders {
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-right: 250px;
+
+            a {
+                margin-right: 30px;
+                text-decoration: none;
+                color: white;
+            }
+
+            .navIcons {
+                padding: 13px 10px 10px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .bottomBorderNav {
+            border-bottom: 4px solid rgba(50, 205, 50, 0.6);
+        }
+    }
+
+    .moveRight {
+        margin-left: 275px;
+    }
+
+    aside {
+        position: fixed;
+        height: auto;
+        background: #1D1D1F;
+        width: 275px;
+        top: 0;
+        bottom: 0;
+        transition: 1s;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+
+        div {
+            padding: 15px;
+            height: 10px;
+
+            span {
+                float: right;
+                color: $color-menu;
+                font-size: 1.3rem;
+                transition: 0.5s;
+            }
+
+            &:hover span {
+                color: white;
+                font-size: 1.35rem;
+            }
+        }
+    }
+
+    .navMenu {
+        left: -275px;
+        justify-content: space-between;
+
+        h3 {
+            color: #FFF;
+            padding-left: 40px;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                margin-bottom: 20px;
+                padding: 5px;
+
+                a {
+                    text-decoration: none;
+                    color: $color-menu;
+                    padding: 5px 15px;
+                    border-radius: 5px;
+                    transition: 1s;
+                }
+
+                &:hover a {
+                    border: 1px solid $color-menu;
+                    color: white;
+                }
+            }
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+            margin-top: 50px;
+            border-top: 1px solid #333335;
+
+            div {
+                height: 60px;
+                width: calc(100% / 3);
+                border-right: 1px solid #333335;
+                line-height: 35px;
+                text-align: center;
+                transition: 1s;
+
+                &:hover {
+                    border: 2px solid #848484;
+                }
+
+                a {
+                    color: $color-menu;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .showMenu {
+        left: 0;
+    }
+
+    .premier_league {
+        position: relative;
+
+        .PL_Games {
+            width: 100%;
+            padding: 60px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .game {
+                width: 200px;
+                text-align: center;
+                padding: 10px;
+                margin: 10px;
+                border: 1px solid black;
+            }
+        }
+
+        .game_details {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            margin: 8%;
+            border-radius: 10px;
+            transition: 0.5s;
+
+            .toggleModal {
+                padding: 15px;
+                height: 10px;
+
+                span {
+                    float: right;
+                    color: $color-menu;
+                    font-size: 2.5rem;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+
+            .bookkeepers {
+                width: 90%;
+                padding: 30px 30px;
+                margin: 5%;
+                border-radius: 5px;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                background-color: white;
+
+                .gameTitle{
+                	width: 100%;
+                	text-align: center;
+                }
+
+                .bookkeeper {
+                    width: 24%;
+                    text-align: center;
+                    padding: 10px;
+                    margin: 10px;
+                    border: 1px solid black;
+                }
+            }
+        }
+
+        .toggleDetails {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.legalFooter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1B1B1F;
+    height: 300px;
+    width: 100%;
+    padding-top: 20px;
+
+    h2 {
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+
+    .inner {
+        color: white;
+        width: 20%;
+        height: auto;
+
+        p {
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            color: rgba(225, 225, 225, 0.6);
+            font-size: 80%;
+            text-transform: uppercase;
+            background-color: rgba(50, 205, 50, 0.6);
+            border-radius: 10px;
+            padding: 8px 14px 8px;
+            margin: 5% 20% 10%;
+            height: 40px;
+            transition: 1s;
+
+            span {
+                padding: 2px;
+            }
+
+            &:hover {
+                background: rgba(50, 205, 50, 0.3);
+                font-size: 84%;
+                margin: 5% 19% 10%;
+            }
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 2px;
+        }
+
+        .social {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            padding: 0px;
+            justify-content: space-between;
+
+            li {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                border: 1px solid #333335;
+                transition: 1s;
+
+                i {
+                    font-size: 0.8rem;
+                    color: $color-menu;
+                }
+
+                &:hover {
+                    border: 1px solid #848484;
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        position: absolute;
+        top: -48%;
+        left: 39%;
+        width: 300px;
+        color: black;
+        text-align: center;
+        padding: 1%;
+        background-color: white;
+        border-radius: 5px;
+        opacity: 1;
+        transition: 1s;
+
+        h2 {
+            color: black;
+        }
+
+        form {
+            .name {
+                background: linear-gradient(to bottom, rgba(225, 225, 225, 0.7) 0%, rgba(225, 225, 225, 0.7) 100%), url(../assets/user.png) no-repeat;
+                background-position: 97%;
+                background-size: 5%;
+                width: 100%;
+                margin-top: 2%;
+                padding: 2%;
+                border: 1px solid #f2f2f2;
+                border-radius: 5px;
+            }
+
+            .email {
+                background: linear-gradient(to bottom, rgba(225, 225, 225, 0.7) 0%, rgba(225, 225, 225, 0.7) 100%), url(../assets/mail-1.jpg) no-repeat;
+                background-position: 97%;
+                background-size: 5%;
+                width: 100%;
+                margin-top: 2%;
+                padding: 2%;
+                border: 1px solid #f2f2f2;
+                border-radius: 5px;
+            }
+
+            textarea {
+                height: 80px;
+                resize: none;
+                background: linear-gradient(to bottom, rgba(225, 225, 225, 0.7) 0%, rgba(225, 225, 225, 0.7) 100%);
+                width: 100%;
+                margin-top: 2%;
+                padding: 2%;
+                border: 1px solid #f2f2f2;
+                border-radius: 5px;
+            }
+
+            .submitButton {
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: white;
+                background: grey;
+                border-radius: 5px;
+                padding: 3% 5%;
+                margin-top: 4%;
+                transition: 1s;
+
+                &:hover {
+                    background: rgba(50, 205, 50, 0.6);
+                }
+            }
+
+            span {
+                padding-left: 15%;
+                transition: 1s;
+            }
+        }
+    }
+
+    .hide-form {
+        opacity: 0;
+    }
+}
+
+@keyframes hideHeader {
+    0% {
+        height: 100vh;
+
+    }
+
+    30% {
+        height: 95vh;
+        margin-top: 0;
+    }
+
+    100% {
+        height: 0;
+        margin-top: 0;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInHalf {
+    0% {
+        opacity: 0.7;
+        font-size: 1.48rem;
+    }
+
+    100% {
+        opacity: 0.9;
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes reveal-text {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+@keyframes revealer-text {
+
+    0%,
+    50% {
+        transform-origin: 0 50%;
+    }
+
+    60%,
+    100% {
+        transform-origin: 100% 50%;
+    }
+
+
+    60% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 50% 65%
+    }
+
+    30% {
+        background-position: 50% 50%
+    }
+
+    40% {
+        background-position: 50% 40%
+    }
+
+    60% {
+        background-position: 50% 20%
+    }
+
+    100% {
+        background-position: 50% 10%
+    }
+}
+
+@media (max-width: 940px) {
+    header {
+        .introHeader {
+            bottom: 250px;
+            margin: 50px;
+            font-size: 1.5rem;
+
+            #messenger {
+                top: 120%;
+                font-size: 0.8rem;
+            }
+
+            #skipIntro {
+                top: -60%;
+                right: -10%;
+            }
+
+            .reveal-text {
+                margin-bottom: 50px;
+            }
+        }
+    }
+}

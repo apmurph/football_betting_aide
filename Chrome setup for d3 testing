@@ -1,0 +1,8 @@
+
+Use this path to open chrome for d3 testing:
+
+C:\Program Files (x86)\Google\Chrome\Application\
+
+chrome.exe --allow-file-access-from-files
+
+Close Chrome and reopen when testing is complete.

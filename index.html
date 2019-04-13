@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="" content="">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="js/dc.min.js"></script>
+    <script type="text/javascript" src="js/queue.min.js"></script>
+    <script type="text/javascript" src="js/graph.js"></script>
+</head>
+
+<body>
+    <a href="#maincontent" class="skip-link">Skip to main content.</a>
+    <header>
+        <figure class="background"></figure>
+        <div class="introHeader">
+            <span id="skipIntro">skip</span>
+            <h1 class="reveal-text">PL Predictor</h1>
+            <div id="messenger"></div>
+        </div>
+        <div class="openWebsite">
+            <span>Open</span>
+            <span><i class="fas fa-sort-down"></i></span>
+        </div>
+        <div class="keepScrollbar"></div>
+    </header>
+    <main id="home">
+        <figure class="overlay" id="overlay">
+            <button class="overlayBtn toggleMenu">X</button>
+        </figure>
+        <nav>
+            <div class="menu toggleMenu">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="floatMenu">menu</span>
+            </div>
+            <div class="navHeaders">
+                <a class="bottomBorderNav" href="#home"><span>Home</span></a>
+                <a href="#"><span>Anchor</span></a>
+                <a href="#"><span>Anchor</span></a>
+                <a class="navIcons" target="_blank" href=""><i class="fas fa-futbol"></i></a>
+            </div>
+        </nav>
+        <aside class="navMenu fixed">
+            <div><span class="toggleMenu highligh"><i class="fas fa-times-circle"></i></span></div>
+            <h3>Menu</h3>
+            <ul>
+                <li class="toggleMenu"><a href="#">Anchor</a></li>
+                <li class="toggleMenu"><a href="#">Anchor</a></li>
+                <li class="toggleMenu"><a href="#">Anchor</a></li>
+                <li class="toggleMenu"><a target="_blank" href="#">Anchor</a></li>
+            </ul>
+            <footer>
+                <div><a target="_blank" href="#"><i class="fas fa-futbol"></i></a></div>
+                <div><a target="_blank" href="#"><i class="fas fa-star"></i></a></div>
+                <div><a target="_blank" href="#"><i class="fas fa-poll"></i></a></div>
+            </footer>
+        </aside>
+        <section class="premier_league">
+            <div class="wrapper">
+                <div id="PL_Games" class="PL_Games"></div>
+            </div>
+            <div class="game_details">
+                <div class="toggleModal"><span class="toggleGameDetails"><i class="fas fa-times-circle"></i></span></div>
+                <div id="bookkeepers" class="bookkeepers"></div>
+            </div>
+        </section>
+        <!-- <section>
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 text-center" id="gender-balance" class="custom-chart"></div>
+                    <div class="col-xs-12 col-sm-4 text-center" id="average-salary" class="custom-chart"></div>
+                    <div class="col-xs-12 col-sm-4 text-center" id="rank-distribution" class="custom-chart"></div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center" id="service-salary">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center" id="phd-salary"></div>
+                </div>
+            </div>
+        </section> -->
+        
+        <footer id="footer" class="legalFooter">
+            <h2>Get in Touch</h2>
+            <p>Contact and Advertising.</p>
+            <div class="inner">
+                <div class="contact-me">
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+                    <span> Send a Message</span>
+                </div>
+                <ul class="social">
+                    <li><a target="_blank" href="#"><i class="fas fa-futbol"></i></a></li>
+                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                    <li><a target="_blank" href="h#"><i class="fas fa-poll"></i></a></li>
+                </ul>
+            </div>
+            <div class="contact-form hide-form">
+                <h2><span>Contact</span> Me</h2>
+                <form action="http://www.focuspocus.io/magic/569747ca24958877c669b69c60033199" method="POST" id="customer-form" enctype="multipart/form-data">
+                    <input type="text" name="name" class="name" placeholder="Name*">
+                    <input type="email" name="email" class="email" placeholder="E-mail*">
+                    <textarea name="message" id="message" placeholder="Message" cols="30" rows="10"></textarea>
+                    <input type="submit" value="SEND MESSAGE" class="submitButton">
+                    <span class="cancel-message">Cancel</span>
+                </form>
+            </div>
+        </footer>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-visible-master/jquery.visible.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
