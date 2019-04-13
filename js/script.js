@@ -22,12 +22,14 @@ function printDataToConsole(data) {
 function writeToDocument(data) {
     var el = document.getElementById("PL_Games");
     games = data.data;
+    game_id = 0;
     games.forEach(function(item) {
         commence_time = item.commence_time;
         var ts = new Date(commence_time*1000);
         var game_date = ts.toDateString();
         var game_time = ts.toLocaleTimeString();
-        el.innerHTML += '<div class="game"><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
+        el.innerHTML += '<div class="game" data-game='+ game_id +'><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
+        game_id ++;
     });
 }
 
