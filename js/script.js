@@ -23,7 +23,7 @@ function writeToDocument(data) {
     var el = document.getElementById("PL_Games");
     games = data.data;
     games.forEach(function(item) {
-        el.innerHTML += "<p>" + item.home_team + "</p>";
+        el.innerHTML += '<div class="game"><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div></div>';
     });
 }
 

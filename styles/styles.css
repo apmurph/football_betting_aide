@@ -536,7 +536,26 @@ main {
     left: 0; }
   main .PL_Games {
     width: 100%;
-    padding: 60px 30px; }
+    padding: 60px 30px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    main .PL_Games .game {
+      width: 200px;
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid black; }
 
 .legalFooter {
   position: relative;
