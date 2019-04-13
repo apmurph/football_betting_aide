@@ -1,3 +1,41 @@
+// ==========================================================================================
+// ============= Odds API ===================================================================
+// ==========================================================================================
+
+function getData(cb) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "https://api.the-odds-api.com/v3/odds/?apiKey=ba3845918a1f0adef372a0e978784d16&sport=soccer_epl&region=uk&mkt=h2h");
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            cb(JSON.parse(this.responseText));
+        }
+    };
+}
+
+function printDataToConsole(data) {
+    console.log(data.data);
+}
+
+function writeToDocument(data) {
+    var el = document.getElementById("PL_Games");
+    games = data.data;
+    games.forEach(function(item) {
+        el.innerHTML += "<p>" + item.home_team + "</p>";
+    });
+}
+
+getData(printDataToConsole);
+getData(writeToDocument);
+
+//==========================================================================================
+
+
+
+
+
 $(function() {
 
     var Messenger = function(el) {
@@ -148,6 +186,3 @@ $(function() {
     contact()
 
 });
-
-
-

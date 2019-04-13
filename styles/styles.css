@@ -534,8 +534,9 @@ main {
           font-size: 1.2rem; }
   main .showMenu {
     left: 0; }
-  main section {
-    height: 200px; }
+  main .PL_Games {
+    width: 100%;
+    padding: 60px 30px; }
 
 .legalFooter {
   position: relative;
