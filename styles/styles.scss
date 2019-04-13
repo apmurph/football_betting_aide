@@ -23,7 +23,7 @@ header {
         height: 100%;
         width: 100%;
         margin: 0 auto;
-        background-image: url(../assets/football-pitch.jpg);
+        background: url(../assets/football-pitch.jpg) no-repeat fixed;
         background-size: 200% 200%;
         transform: scale(1.2);
         opacity: 0.5;
@@ -372,21 +372,58 @@ main {
         left: 0;
     }
 
-    .PL_Games {
-        width: 100%;
-        padding: 60px 30px;
+    .premier_league {
         position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
 
-        .game {
-        		width: 200px;
-            text-align: center;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid black;
+        .PL_Games {
+            width: 100%;
+            padding: 60px 30px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .game {
+                width: 200px;
+                text-align: center;
+                padding: 10px;
+                margin: 10px;
+                border: 1px solid black;
+            }
+        }
+
+        .game_details {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            margin: 8%;
+            border-radius: 5%;
+
+            div {
+                padding: 15px;
+                height: 10px;
+
+                span {
+                    float: right;
+                    color: $color-menu;
+                    font-size: 2.5rem;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+        .toggleDetails {
+        	opacity: 1;
+        	visibility: visible;
         }
     }
 }

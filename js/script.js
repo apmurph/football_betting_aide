@@ -25,11 +25,17 @@ function writeToDocument(data) {
     game_id = 0;
     games.forEach(function(item) {
         commence_time = item.commence_time;
-        var ts = new Date(commence_time*1000);
+        var ts = new Date(commence_time * 1000);
         var game_date = ts.toDateString();
         var game_time = ts.toLocaleTimeString();
-        el.innerHTML += '<div class="game" data-game='+ game_id +'><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
-        game_id ++;
+        el.innerHTML += '<div class="game" data-game=' + game_id + '><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
+        game_id++;
+    });
+    $(function() {
+        $('.game').on('click', function() {
+            $('.game_details').toggleClass('toggleDetails');
+            console.log(this.dataset.game)
+        });
     });
 }
 
@@ -190,5 +196,11 @@ $(function() {
     }
 
     contact()
+
+    //=============  Toggle side game_details on-screen   =======================
+
+    $('.toggleGameDetails').click(function() {
+        $('.game_details').toggleClass('toggleDetails');
+    });
 
 });

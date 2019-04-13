@@ -189,7 +189,7 @@ header {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    background-image: url(../assets/football-pitch.jpg);
+    background: url(../assets/football-pitch.jpg) no-repeat fixed;
     background-size: 200% 200%;
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -534,28 +534,56 @@ main {
           font-size: 1.2rem; }
   main .showMenu {
     left: 0; }
-  main .PL_Games {
-    width: 100%;
-    padding: 60px 30px;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
-    main .PL_Games .game {
-      width: 200px;
-      text-align: center;
-      padding: 10px;
-      margin: 10px;
-      border: 1px solid black; }
+  main .premier_league {
+    position: relative; }
+    main .premier_league .PL_Games {
+      width: 100%;
+      padding: 60px 30px;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      main .premier_league .PL_Games .game {
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid black; }
+    main .premier_league .game_details {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      opacity: 0;
+      visibility: hidden;
+      margin: 8%;
+      border-radius: 5%; }
+      main .premier_league .game_details div {
+        padding: 15px;
+        height: 10px; }
+        main .premier_league .game_details div span {
+          float: right;
+          color: #9c9c9c;
+          font-size: 2.5rem;
+          -webkit-transition: 0.5s;
+          -o-transition: 0.5s;
+          transition: 0.5s; }
+          main .premier_league .game_details div span:hover {
+            color: white; }
+    main .premier_league .toggleDetails {
+      opacity: 1;
+      visibility: visible; }
 
 .legalFooter {
   position: relative;
