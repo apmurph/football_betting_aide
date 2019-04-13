@@ -568,19 +568,50 @@ main {
       opacity: 0;
       visibility: hidden;
       margin: 8%;
-      border-radius: 5%; }
-      main .premier_league .game_details div {
+      border-radius: 10px;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s; }
+      main .premier_league .game_details .toggleModal {
         padding: 15px;
         height: 10px; }
-        main .premier_league .game_details div span {
+        main .premier_league .game_details .toggleModal span {
           float: right;
           color: #9c9c9c;
           font-size: 2.5rem;
           -webkit-transition: 0.5s;
           -o-transition: 0.5s;
           transition: 0.5s; }
-          main .premier_league .game_details div span:hover {
+          main .premier_league .game_details .toggleModal span:hover {
             color: white; }
+      main .premier_league .game_details .bookkeepers {
+        width: 90%;
+        padding: 30px 30px;
+        margin: 5%;
+        border-radius: 5px;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        background-color: white; }
+        main .premier_league .game_details .bookkeepers .gameTitle {
+          width: 100%;
+          text-align: center; }
+        main .premier_league .game_details .bookkeepers .bookkeeper {
+          width: 24%;
+          text-align: center;
+          padding: 10px;
+          margin: 10px;
+          border: 1px solid black; }
     main .premier_league .toggleDetails {
       opacity: 1;
       visibility: visible; }

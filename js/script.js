@@ -20,7 +20,7 @@ function printDataToConsole(data) {
 }
 
 function writeToDocument(data) {
-    var el = document.getElementById("PL_Games");
+    var game_details = document.getElementById("PL_Games");
     games = data.data;
     game_id = 0;
     games.forEach(function(item) {
@@ -28,13 +28,21 @@ function writeToDocument(data) {
         var ts = new Date(commence_time * 1000);
         var game_date = ts.toDateString();
         var game_time = ts.toLocaleTimeString();
-        el.innerHTML += '<div class="game" data-game=' + game_id + '><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
+        game_details.innerHTML += '<div class="game" data-game=' + game_id + '><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
         game_id++;
     });
     $(function() {
         $('.game').on('click', function() {
             $('.game_details').toggleClass('toggleDetails');
-            console.log(this.dataset.game)
+            game_index = this.dataset.game;
+            bookkeepers = games[game_index].sites;
+
+            console.log(games[game_index].sites);
+            var bookkeeper_details = document.getElementById("bookkeepers");
+            bookkeeper_details.innerHTML = '<div class="gameTitle">' + games[game_index].teams[1] + ' vs ' + games[game_index].teams[0] + '</div>';
+            bookkeepers.forEach(function(item) {
+                bookkeeper_details.innerHTML += '<div class="bookkeeper"><div>' + item.site_nice + '</div><div>' + 'Home ' + item.odds.h2h[1] + '</div><div>' + 'Draw ' + item.odds.h2h[2] + '</div><div>' + 'Away ' + item.odds.h2h[0] + '</div></div>';
+            });
         });
     });
 }
