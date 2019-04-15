@@ -51,10 +51,22 @@ getData(printDataToConsole);
 getData(writeToDocument);
 
 //==========================================================================================
+// ============= Odds API ===================================================================
+// ==========================================================================================
 
+$.ajax({
+    headers: { 'X-Auth-Token': '42a42dcc3110469ea789f200ccb94677' },
+    url: 'http://api.football-data.org/v2/competitions/2021/standings',
+    dataType: 'json',
+    type: 'GET',
+}).done(function(response) {
+    // do something with the response, e.g. isolate the id of a linked resource   
+    console.log(response);
+});
 
+//Your API token: 42a42dcc3110469ea789f200ccb94677
 
-
+// ==========================================================================================
 
 $(function() {
 
