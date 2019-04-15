@@ -51,10 +51,27 @@ getData(printDataToConsole);
 getData(writeToDocument);
 
 //==========================================================================================
+// ============= Odds API ===================================================================
+// ==========================================================================================
+
+$.ajax({
+    headers: { 'X-Auth-Token': '42a42dcc3110469ea789f200ccb94677' },
+    url: 'http://api.football-data.org/v2/competitions/2021/standings',
+    dataType: 'json',
+    type: 'GET',
+}).done(function(response) {
+
+    var standings = response.standings[0].table;
+    console.log(standings);
+    var standing_table_content = document.getElementById("standing_table_content");
+    standings.forEach(function(item) {
+        standing_table_content.innerHTML += '<tr class="standing-table__row" data-item-id="155"><td class="standing-table__cell">' + item.position + '</td> <td class = "standing-table__cell standing-table__cell--name" ><a href="#" class="standing-table__cell--name-link">' + item.team.name + '</a> </td><td class="standing-table__cell">' + item.playedGames + '</td><td class="standing-table__cell">' + item.won + '</td><td class="standing-table__cell">' + item.draw + '</td><td class="standing-table__cell">' + item.lost + '</td><td class="standing-table__cell">' + item.goalsFor + '</td><td class="standing-table__cell">' + item.goalsAgainst + '</td><td class="standing-table__cell">' + item.goalDifference + '</td><td class="standing-table__cell">' + item.points + '</td><td class="standing-table__cell"><div class="standing-table__form"><span class=""> </span><span class=""> </span><span class=""> </span><span class=""> </span><span class=""> </span></div></td></tr > '
+    });
 
 
+});
 
-
+// ==========================================================================================
 
 $(function() {
 

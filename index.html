@@ -67,7 +67,45 @@
                 <div><a target="_blank" href="#"><i class="fas fa-poll"></i></a></div>
             </footer>
         </aside>
-        <section class="premier_league">
+        <section class="premier_league_table">
+            <div class="wrapper">
+                <table class="standing-table__table">
+                    <caption class="standing-table__caption">
+                        Premier League 2018/19 </caption>
+                    <colgroup class="standing-table__cols">
+                        <col class="standing-table__cell standing-table__col1">
+                        <col class="standing-table__cell standing-table__col2">
+                        <col class="standing-table__cell standing-table__col3">
+                        <col class="standing-table__cell standing-table__col4">
+                        <col class="standing-table__cell standing-table__col5">
+                        <col class="standing-table__cell standing-table__col6">
+                        <col class="standing-table__cell standing-table__col7">
+                        <col class="standing-table__cell standing-table__col8">
+                        <col class="standing-table__cell standing-table__col9">
+                        <col class="standing-table__cell standing-table__col10">
+                        <col class="standing-table__cell standing-table__col11">
+                    </colgroup>
+                    <thead>
+                        <tr class="standing-table__row">
+                            <th class="standing-table__cell standing-table__header-cell" title="Position" data-label="pos" data-index="0">#</th>
+                            <th class="standing-table__cell standing-table__header-cell standing-table__cell--name" title="Team" data-index="1">Team</th>
+                            <th class="standing-table__cell standing-table__header-cell" title="Played" data-label="pld" data-index="2">Pl</th>
+                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp35" title="Won" data-label="w" data-index="3">W</th>
+                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="d" data-index="4">D</th>
+                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="l" data-index="5">L</th>
+                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="f" data-index="6">F</th>
+                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="a" data-index="7">A</th>
+                            <th class="standing-table__cell standing-table__header-cell" data-label="gd" data-index="8">GD</th>
+                            <th class="standing-table__cell standing-table__header-cell" data-label="pts" data-sort-value="use-attribute" data-index="9">Pts</th>
+                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp15 is-hidden--bp35 " data-sort-value="use-attribute" data-index="10">Last 6</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standing_table_content">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="premier_league_odds">
             <div class="wrapper">
                 <div id="PL_Games" class="PL_Games"></div>
             </div>
@@ -76,31 +114,6 @@
                 <div id="bookkeepers" class="bookkeepers"></div>
             </div>
         </section>
-        <!-- <section>
-            <div class="wrapper">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 text-center" id="gender-balance" class="custom-chart"></div>
-                    <div class="col-xs-12 col-sm-4 text-center" id="average-salary" class="custom-chart"></div>
-                    <div class="col-xs-12 col-sm-4 text-center" id="rank-distribution" class="custom-chart"></div>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 text-center" id="service-salary">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 text-center" id="phd-salary"></div>
-                </div>
-            </div>
-        </section> -->
-        
         <footer id="footer" class="legalFooter">
             <h2>Get in Touch</h2>
             <p>Contact and Advertising.</p>
@@ -126,6 +139,9 @@
                 </form>
             </div>
         </footer>
+        <section class="practice_graphs">
+            <div id="graphs"></div>
+        </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery-visible-master/jquery.visible.js"></script>
