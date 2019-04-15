@@ -67,8 +67,17 @@
                 <div><a target="_blank" href="#"><i class="fas fa-poll"></i></a></div>
             </footer>
         </aside>
-        <section class="premier_league_table">
+        <section class="introduction">
+            <h1>Premier League Predictor</h1>
+            <p>Find the best odds, compare the stats...discover a winning formula.</p>
+            <div class="intro_sections">
+                <div class="matches_btn">Matches</div>
+                <div class="league_table_btn">League Table</div>
+            </div>
+        </section>
+        <section class="premier_league_table toggleSections">
             <div class="wrapper">
+                <div class="toggleTable"><span><i class="fas fa-times-circle"></i></span></div>
                 <table class="standing-table__table">
                     <caption class="standing-table__caption">
                         Premier League 2018/19 </caption>
@@ -97,7 +106,6 @@
                             <th class="standing-table__cell standing-table__header-cell is-hidden--bp35" data-label="a" data-index="7">A</th>
                             <th class="standing-table__cell standing-table__header-cell" data-label="gd" data-index="8">GD</th>
                             <th class="standing-table__cell standing-table__header-cell" data-label="pts" data-sort-value="use-attribute" data-index="9">Pts</th>
-                            <th class="standing-table__cell standing-table__header-cell is-hidden--bp15 is-hidden--bp35 " data-sort-value="use-attribute" data-index="10">Last 6</th>
                         </tr>
                     </thead>
                     <tbody id="standing_table_content">
@@ -105,13 +113,113 @@
                 </table>
             </div>
         </section>
-        <section class="premier_league_odds">
+        <section class="premier_league_odds toggleSections">
             <div class="wrapper">
-                <div id="PL_Games" class="PL_Games"></div>
+                <div class="toggleMatches"><span><i class="fas fa-times-circle"></i></span></div>
+                <div id="PL_Games" class="PL_Games">
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                    <div class="game" data-game='3'>
+                        <div>Liverpool</div>
+                        <div>vs</div>
+                        <div>Manchester City</div>
+                        <div>23 Mar 2019 15:00</div>
+                    </div>
+                </div>
             </div>
             <div class="game_details">
                 <div class="toggleModal"><span class="toggleGameDetails"><i class="fas fa-times-circle"></i></span></div>
-                <div id="bookkeepers" class="bookkeepers"></div>
+                <div id="bookkeepers" class="bookkeepers">
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
+                    <div class="bookkeeper">
+                        <div>Betfair</div>
+                        <div>Home 1.50</div>
+                        <div>Draw 2.00</div>
+                        <div>Away 5.00</div>
+                    </div>
+                </div>
             </div>
         </section>
         <footer id="footer" class="legalFooter">

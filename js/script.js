@@ -1,5 +1,5 @@
 // ==========================================================================================
-// ============= Odds API ===================================================================
+// ============= Football Odds API ===================================================================
 // ==========================================================================================
 
 function getData(cb) {
@@ -51,7 +51,7 @@ getData(printDataToConsole);
 getData(writeToDocument);
 
 //==========================================================================================
-// ============= Odds API ===================================================================
+// ============= Football Data API ===================================================================
 // ==========================================================================================
 
 $.ajax({
@@ -222,7 +222,28 @@ $(function() {
 
     contact()
 
-    //=============  Toggle side game_details on-screen   =======================
+    //=============  Toggle sections on-screen   =======================
+
+    $('.matches_btn').click(function() {
+        $('.premier_league_odds').removeClass('toggleSections');
+        $('.introduction').addClass('toggleSections');
+    });
+
+    $('.league_table_btn').click(function() {
+        $('.premier_league_table').removeClass('toggleSections');
+        $('.introduction').addClass('toggleSections');
+    });
+
+    $('.toggleMatches > span').click(function() {
+        $('.introduction').removeClass('toggleSections');
+        $('.premier_league_odds').addClass('toggleSections');
+    });
+
+    $('.toggleTable > span').click(function() {
+        $('.introduction').removeClass('toggleSections');
+        $('.premier_league_table').addClass('toggleSections');
+    });
+    //=============  Toggle game_details on-screen   =======================
 
     $('.toggleGameDetails').click(function() {
         $('.game_details').toggleClass('toggleDetails');
