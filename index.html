@@ -11,10 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script type="text/javascript" src="js/d3.min.js"></script>
-    <script type="text/javascript" src="js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="js/dc.min.js"></script>
-    <script type="text/javascript" src="js/queue.min.js"></script>
-    <script type="text/javascript" src="js/graph.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 </head>
 
 <body>
@@ -47,8 +44,8 @@
             </div>
             <div class="navHeaders">
                 <a class="bottomBorderNav" href="#home"><span>Home</span></a>
-                <a href="#"><span>Anchor</span></a>
-                <a href="#"><span>Anchor</span></a>
+                <a href="#"><span>Login</span></a>
+                <a href="#"><span>SignUp</span></a>
                 <a class="navIcons" target="_blank" href=""><i class="fas fa-futbol"></i></a>
             </div>
         </nav>
@@ -177,44 +174,26 @@
                         <div>Draw 2.00</div>
                         <div>Away 5.00</div>
                     </div>
-                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
                     <div class="bookkeeper">
-                        <div>Betfair</div>
+                        <div>Ladbrooks</div>
                         <div>Home 1.50</div>
                         <div>Draw 2.00</div>
                         <div>Away 5.00</div>
                     </div>
-                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
                     <div class="bookkeeper">
-                        <div>Betfair</div>
+                        <div>PaddyPower</div>
                         <div>Home 1.50</div>
                         <div>Draw 2.00</div>
                         <div>Away 5.00</div>
                     </div>
-                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
                     <div class="bookkeeper">
-                        <div>Betfair</div>
+                        <div>Betfred</div>
                         <div>Home 1.50</div>
                         <div>Draw 2.00</div>
                         <div>Away 5.00</div>
                     </div>
-                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
                     <div class="bookkeeper">
-                        <div>Betfair</div>
-                        <div>Home 1.50</div>
-                        <div>Draw 2.00</div>
-                        <div>Away 5.00</div>
-                    </div>
-                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
-                    <div class="bookkeeper">
-                        <div>Betfair</div>
-                        <div>Home 1.50</div>
-                        <div>Draw 2.00</div>
-                        <div>Away 5.00</div>
-                    </div>
-                    <div class="gameTitle">Liverpool vs 'Manchester City</div>
-                    <div class="bookkeeper">
-                        <div>Betfair</div>
+                        <div>BetBetter</div>
                         <div>Home 1.50</div>
                         <div>Draw 2.00</div>
                         <div>Away 5.00</div>
@@ -233,7 +212,7 @@
                 <ul class="social">
                     <li><a target="_blank" href="#"><i class="fas fa-futbol"></i></a></li>
                     <li><a href="#"><i class="fas fa-star"></i></a></li>
-                    <li><a target="_blank" href="h#"><i class="fas fa-poll"></i></a></li>
+                    <li><a target="_blank" href="#"><i class="fas fa-poll"></i></a></li>
                 </ul>
             </div>
             <div class="contact-form hide-form">
@@ -248,13 +227,15 @@
             </div>
         </footer>
         <section class="practice_graphs">
-            <div id="graphs"></div>
+            <div>Test Pie Chart</div>
+            <div id="my_dataviz"></div>
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery-visible-master/jquery.visible.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
     <script src="js/script.js"></script>
+    <script type="text/javascript" src="js/graph.js"></script>
 </body>
 
 </html>
