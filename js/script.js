@@ -1,57 +1,57 @@
 // ==========================================================================================
-// ============= Odds API ===================================================================
+// ============= Football Odds API ==========================================================
 // ==========================================================================================
 
-function getData(cb) {
-    var xhr = new XMLHttpRequest();
+// function getData(cb) {
+//     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "https://api.the-odds-api.com/v3/odds/?apiKey=ba3845918a1f0adef372a0e978784d16&sport=soccer_epl&region=uk&mkt=h2h");
-    xhr.send();
+//     xhr.open("GET", "https://api.the-odds-api.com/v3/odds/?apiKey=ba3845918a1f0adef372a0e978784d16&sport=soccer_epl&region=uk&mkt=h2h");
+//     xhr.send();
 
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            cb(JSON.parse(this.responseText));
-        }
-    };
-}
+//     xhr.onreadystatechange = function() {
+//         if (this.readyState == 4 && this.status == 200) {
+//             cb(JSON.parse(this.responseText));
+//         }
+//     };
+// }
 
-function printDataToConsole(data) {
-    console.log(data.data);
-}
+// function printDataToConsole(data) {
+//     console.log(data.data);
+// }
 
-function writeToDocument(data) {
-    var game_details = document.getElementById("PL_Games");
-    games = data.data;
-    game_id = 0;
-    games.forEach(function(item) {
-        commence_time = item.commence_time;
-        var ts = new Date(commence_time * 1000);
-        var game_date = ts.toDateString();
-        var game_time = ts.toLocaleTimeString();
-        game_details.innerHTML += '<div class="game" data-game=' + game_id + '><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
-        game_id++;
-    });
-    $(function() {
-        $('.game').on('click', function() {
-            $('.game_details').toggleClass('toggleDetails');
-            game_index = this.dataset.game;
-            bookkeepers = games[game_index].sites;
+// function writeToDocument(data) {
+//     var game_details = document.getElementById("PL_Games");
+//     games = data.data;
+//     game_id = 0;
+//     games.forEach(function(item) {
+//         commence_time = item.commence_time;
+//         var ts = new Date(commence_time * 1000);
+//         var game_date = ts.toDateString();
+//         var game_time = ts.toLocaleTimeString();
+//         game_details.innerHTML += '<div class="game" data-game=' + game_id + '><div>' + item.teams[1] + '</div><div>' + 'vs' + '</div><div>' + item.teams[0] + '</div><div>' + game_date + ' ' + game_time + '</div></div>';
+//         game_id++;
+//     });
+//     $(function() {
+//         $('.game').on('click', function() {
+//             $('.game_details').toggleClass('toggleDetails');
+//             game_index = this.dataset.game;
+//             bookkeepers = games[game_index].sites;
 
-            console.log(games[game_index].sites);
-            var bookkeeper_details = document.getElementById("bookkeepers");
-            bookkeeper_details.innerHTML = '<div class="gameTitle">' + games[game_index].teams[1] + ' vs ' + games[game_index].teams[0] + '</div>';
-            bookkeepers.forEach(function(item) {
-                bookkeeper_details.innerHTML += '<div class="bookkeeper"><div>' + item.site_nice + '</div><div>' + 'Home ' + item.odds.h2h[1] + '</div><div>' + 'Draw ' + item.odds.h2h[2] + '</div><div>' + 'Away ' + item.odds.h2h[0] + '</div></div>';
-            });
-        });
-    });
-}
+//             console.log(games[game_index].sites);
+//             var bookkeeper_details = document.getElementById("bookkeepers");
+//             bookkeeper_details.innerHTML = '<div class="gameTitle">' + games[game_index].teams[1] + ' vs ' + games[game_index].teams[0] + '</div>';
+//             bookkeepers.forEach(function(item) {
+//                 bookkeeper_details.innerHTML += '<div class="bookkeeper"><div>' + item.site_nice + '</div><div>' + 'Home ' + item.odds.h2h[1] + '</div><div>' + 'Draw ' + item.odds.h2h[2] + '</div><div>' + 'Away ' + item.odds.h2h[0] + '</div></div>';
+//             });
+//         });
+//     });
+// }
 
-getData(printDataToConsole);
-getData(writeToDocument);
+// getData(printDataToConsole);
+// getData(writeToDocument);
 
 //==========================================================================================
-// ============= Odds API ===================================================================
+// ============= Football Data API ===================================================================
 // ==========================================================================================
 
 $.ajax({
@@ -69,14 +69,6 @@ $.ajax({
     });
 
 
-});
-$.ajax({
-    headers: { 'X-Auth-Token': '42a42dcc3110469ea789f200ccb94677' },
-    url: 'http://api.football-data.org/v2/competitions/2021/',
-    dataType: 'json',
-    type: 'GET',
-}).done(function(response) {
-    console.log(response);
 });
 
 // ==========================================================================================
@@ -230,7 +222,28 @@ $(function() {
 
     contact()
 
-    //=============  Toggle side game_details on-screen   =======================
+    //=============  Toggle sections on-screen   =======================
+
+    $('.matches_btn').click(function() {
+        $('.premier_league_odds').removeClass('toggleSections');
+        $('.introduction').addClass('toggleSections');
+    });
+
+    $('.league_table_btn').click(function() {
+        $('.premier_league_table').removeClass('toggleSections');
+        $('.introduction').addClass('toggleSections');
+    });
+
+    $('.toggleMatches > span').click(function() {
+        $('.introduction').removeClass('toggleSections');
+        $('.premier_league_odds').addClass('toggleSections');
+    });
+
+    $('.toggleTable > span').click(function() {
+        $('.introduction').removeClass('toggleSections');
+        $('.premier_league_table').addClass('toggleSections');
+    });
+    //=============  Toggle game_details on-screen   =======================
 
     $('.toggleGameDetails').click(function() {
         $('.game_details').toggleClass('toggleDetails');

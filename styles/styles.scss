@@ -372,17 +372,72 @@ main {
         left: 0;
     }
 
+    .introduction {
+        width: 100%;
+        padding: 60px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .intro_sections {
+            display: flex;
+            flex-direction: row;
+
+            div {
+                background: radial-gradient(circle, #212121 1%, #313131 49%, #313131 50%);
+                text-align: center;
+                margin: 10px;
+                border-radius: 10px;
+                border: 1px solid #a2baa4;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-family: Arial;
+                font-size: 13px;
+                padding: 21px 31px;
+                text-decoration: none;
+                text-shadow: 0px 1px 0px #2f6627;
+            }
+        }
+    }
+
     .premier_league_table {
         width: 100%;
         padding: 60px 30px;
+
+        .toggleTable {
+            span {
+                float: right;
+                color: $color-menu;
+                font-size: 2.5rem;
+                transition: 0.5s;
+
+                &:hover {
+                    color: grey;
+                }
+            }
+        }
     }
 
     .premier_league_odds {
         position: relative;
+        padding: 60px 30px;
+
+        .toggleMatches {
+            span {
+                float: right;
+                color: $color-menu;
+                font-size: 2.5rem;
+                transition: 0.5s;
+
+                &:hover {
+                    color: grey;
+                }
+            }
+        }
 
         .PL_Games {
             width: 100%;
-            padding: 60px 30px;
             position: relative;
             display: flex;
             flex-direction: row;
@@ -390,23 +445,31 @@ main {
             flex-wrap: wrap;
 
             .game {
-                width: 200px;
+                background: radial-gradient(circle, #212121 1%, #313131 49%, #313131 50%);
                 text-align: center;
-                padding: 10px;
                 margin: 10px;
-                border: 1px solid black;
+                border-radius: 10px;
+                border: 1px solid #a2baa4;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-family: Arial;
+                font-size: 13px;
+                padding: 21px 31px;
+                text-decoration: none;
+                text-shadow: 0px 1px 0px #2f6627;
             }
         }
 
         .game_details {
             position: absolute;
             top: 0;
-            right: 0;
-            bottom: 0;
             left: 0;
+            right: 0;
+            z-index: 10;
             background-color: rgba(0, 0, 0, 0.9);
-            opacity: 0;
-            visibility: hidden;
+            // opacity: 0;
+            // visibility: hidden;
             margin: 8%;
             border-radius: 10px;
             transition: 0.5s;
@@ -458,7 +521,13 @@ main {
             opacity: 1;
             visibility: visible;
         }
+
     }
+
+    .toggleSections {
+        display: none;
+    }
+
 }
 
 .legalFooter {
@@ -625,6 +694,7 @@ main {
 
     .hide-form {
         opacity: 0;
+        visibility: hidden;
     }
 
     .practice_graphs {
