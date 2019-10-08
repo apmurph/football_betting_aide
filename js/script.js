@@ -58,7 +58,7 @@ getData(writeToDocument);
 
 $.ajax({
     headers: { 'X-Auth-Token': '42a42dcc3110469ea789f200ccb94677' },
-    url: 'http://api.football-data.org/v2/competitions/2021/standings',
+    url: 'https://api.football-data.org/v2/competitions/2021/standings',
     dataType: 'json',
     type: 'GET',
 }).done(function(response) {
