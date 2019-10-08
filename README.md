@@ -7,12 +7,6 @@
 
    
 
-  
-
-   
-
-  
-
 *************************************************************************  
 
   
@@ -39,16 +33,20 @@ Hi there! Welcome to my Interactive Frontend Development Milestone Project!
 
    
 
- The main concept of this application is to allow users to quickly view upcoming Premier League matches and compare the Win-Lose-Draw odds from all the active Bookmakers in that market space. A statistic section will be introduced to compliment the main section. This section will consist of a Premier League table and team information. 
+ The main concept of this application is to allow users to quickly view upcoming Premier League matches and compare the Win-Lose-Draw odds from all the active Bookmakers in that market space. A statistic section is also available to compliment the main section. This section consists of the current Premier League table and team statistics. 
 
- This is the core concept behind the application with massive scope to expand and introduce additional features. The second phase of development will involve expanding the statistic section, introducing in-depth historical data. The next phase will include a user login in and ability to select historic statistics to build bespoke match predictions and match them to the best match odds in the marketplace.  
+ This is the core concept behind the application with a scope to expand and introduce additional features. The second phase of development will involve expanding the statistic section, introducing in-depth historical data. The next phase will include a user login in and ability to select historic statistics to build bespoke match predictions and match them to the best match odds in the marketplace.  
 
    
 *************************************************************************
 TECH STACK 
 
   
-HTML5 -- SCSS and CSS -- Javascript, D3 and jquery 
+HTML5 -- 
+SCSS and CSS -- 
+Javascript, Jquery --
+D3, Crossfilter, DC --
+
 *************************************************************************
  
 
@@ -104,7 +102,13 @@ Main Sections – All of the main sections interact with each other: by toggling
 
 Footer – provides addition links and an interactive comments form that will send the comment to a selected email address 
 
+
+
 Features Left to Implement 
+
+The statistics section for each team is only hard coded for one team (Bournmouth) and I still need to create a loop for all teams in the league
+
+Mobile Responsive - currently not all features are mobile responsive 
 
 Authentication - create user accounts 
 
@@ -116,3 +120,42 @@ Compare user predictions to best odds in the marketplace.
 
  
 -----------------------------------------------------------------------------  
+
+
+Testing.. 
+
+A cloned version of this project was created for testing new additions to the application. Once a new section was working correctly in the test area it was introduced into the Milestone-2 application.
+
+All interactive parts of the application were tested manually to make sure no errors occur 
+
+-----------------------------------------------------------------------------  
+
+Development..
+
+This application was developed using the git content tracker control system
+
+Deployment..
+
+This application was deployed to github and published using github Pages at:
+https://apmurph.github.io/football_betting_aide/
+
+----------------------------------------------------------------------------- 
+
+Acknowledgements.. 
+  
+
+Thank you to my Code Institute mentor Antonija Simic for her advise and for providing 
+
+the framework to produce a professional application.  
+
+Fonts supplied by https://fonts.google.com/ 
+
+A little help from https://getbootstrap.com 
+
+Icons by who else but https://fontawesome.com/ 
+
+Design inspiration from www.awwwards.com  
+
+https://blog.hubspot.com and www.smashingmagazine.com 
+
+----------------------------------------------------------------------------- 
