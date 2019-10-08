@@ -583,6 +583,71 @@ main {
       transition: 0.5s; }
       main .premier_league_table .toggleTable span:hover {
         color: grey; }
+    main .premier_league_table .team_Statistics {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background-color: white;
+      opacity: 0;
+      visibility: hidden;
+      margin: 8%;
+      border-radius: 10px;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s; }
+      main .premier_league_table .team_Statistics .toggleModal {
+        padding: 15px;
+        height: 10px; }
+        main .premier_league_table .team_Statistics .toggleModal span {
+          float: right;
+          color: #9c9c9c;
+          font-size: 2.5rem;
+          -webkit-transition: 0.5s;
+          -o-transition: 0.5s;
+          transition: 0.5s; }
+          main .premier_league_table .team_Statistics .toggleModal span:hover {
+            color: white; }
+    main .premier_league_table .statistics {
+      width: 90%;
+      padding: 30px 30px;
+      margin: 5%;
+      border-radius: 5px;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      background-color: white; }
+    main .premier_league_table .toggleStatistics {
+      opacity: 1;
+      visibility: visible; }
+    main .premier_league_table .team_Statistics_graphs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      padding: 10px;
+      color: white; }
+      main .premier_league_table .team_Statistics_graphs div {
+        width: 33%; }
   main .premier_league_odds {
     position: relative;
     padding: 60px 30px; }
@@ -633,6 +698,8 @@ main {
       right: 0;
       z-index: 10;
       background-color: rgba(0, 0, 0, 0.9);
+      opacity: 0;
+      visibility: hidden;
       margin: 8%;
       border-radius: 10px;
       -webkit-transition: 0.5s;
@@ -683,6 +750,9 @@ main {
       visibility: visible; }
   main .toggleSections {
     display: none; }
+
+#test_graphs {
+  position: absolute; }
 
 .legalFooter {
   position: relative;

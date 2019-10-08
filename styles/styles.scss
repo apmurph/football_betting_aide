@@ -417,6 +417,70 @@ main {
                 }
             }
         }
+
+        .team_Statistics {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background-color: white;
+            opacity: 0;
+            visibility: hidden;
+            margin: 8%;
+            border-radius: 10px;
+            transition: 0.5s;
+
+            .toggleModal {
+                padding: 15px;
+                height: 10px;
+
+                span {
+                    float: right;
+                    color: $color-menu;
+                    font-size: 2.5rem;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .statistics {
+            width: 90%;
+            padding: 30px 30px;
+            margin: 5%;
+            border-radius: 5px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: white;
+        }
+
+        .toggleStatistics {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .team_Statistics_graphs {
+
+            div {
+                width: 33%;
+            }
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            color: white;
+        }
+
+
     }
 
     .premier_league_odds {
@@ -468,8 +532,8 @@ main {
             right: 0;
             z-index: 10;
             background-color: rgba(0, 0, 0, 0.9);
-            // opacity: 0;
-            // visibility: hidden;
+            opacity: 0;
+            visibility: hidden;
             margin: 8%;
             border-radius: 10px;
             transition: 0.5s;
@@ -528,6 +592,9 @@ main {
         display: none;
     }
 
+}
+#test_graphs {
+    position: absolute;
 }
 
 .legalFooter {

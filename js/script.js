@@ -1,5 +1,6 @@
 // ==========================================================================================
 // ============= Football Odds API ==========================================================
+// ============= provides Premier League Odds data for upcoming PL games ====================
 // ==========================================================================================
 
 // function getData(cb) {
@@ -51,8 +52,9 @@
 // getData(writeToDocument);
 
 //==========================================================================================
-// ============= Football Data API ===================================================================
-// ==========================================================================================
+// ============= Football Data API =========================================================
+// ============= provides current Premier League league table results ======================
+// =========================================================================================
 
 $.ajax({
     headers: { 'X-Auth-Token': '42a42dcc3110469ea789f200ccb94677' },
@@ -62,16 +64,33 @@ $.ajax({
 }).done(function(response) {
 
     var standings = response.standings[0].table;
+    var team_id = 0;
     console.log(standings);
     var standing_table_content = document.getElementById("standing_table_content");
     standings.forEach(function(item) {
-        standing_table_content.innerHTML += '<tr class="standing-table__row" data-item-id="155"><td class="standing-table__cell">' + item.position + '</td> <td class = "standing-table__cell standing-table__cell--name" ><a href="#" class="standing-table__cell--name-link">' + item.team.name + '</a> </td><td class="standing-table__cell">' + item.playedGames + '</td><td class="standing-table__cell">' + item.won + '</td><td class="standing-table__cell">' + item.draw + '</td><td class="standing-table__cell">' + item.lost + '</td><td class="standing-table__cell">' + item.goalsFor + '</td><td class="standing-table__cell">' + item.goalsAgainst + '</td><td class="standing-table__cell">' + item.goalDifference + '</td><td class="standing-table__cell">' + item.points + '</td><td class="standing-table__cell"><div class="standing-table__form"><span class=""> </span><span class=""> </span><span class=""> </span><span class=""> </span><span class=""> </span></div></td></tr > '
+        standing_table_content.innerHTML += '<tr class="standing-table__row"><td class="standing-table__cell">' + item.position + '</td> <td class = "standing-table__cell standing-table__cell--name" data-team='+ team_id +'><a href="#" class="standing-table__cell--name-link">' + item.team.name + '</a> </td><td class="standing-table__cell">' + item.playedGames + '</td><td class="standing-table__cell">' + item.won + '</td><td class="standing-table__cell">' + item.draw + '</td><td class="standing-table__cell">' + item.lost + '</td><td class="standing-table__cell">' + item.goalsFor + '</td><td class="standing-table__cell">' + item.goalsAgainst + '</td><td class="standing-table__cell">' + item.goalDifference + '</td><td class="standing-table__cell">' + item.points + '</td><td class="standing-table__cell"><div class="standing-table__form"><span class=""> </span><span class=""> </span><span class=""> </span><span class=""> </span><span class=""> </span></div></td></tr > '
+        team_id++;
     });
 
+$(function() {
+        $('.standing-table__cell--name').on('click', function() {
+            $('.team_Statistics').toggleClass('toggleStatistics');
+
+            // team_index = this.dataset.team;
+            // team_id = standings[team_index].team.id;
+            // console.log(team_id);
+            // var statistics = document.getElementById("statistics");
+            // statistics.innerHTML = '<div id="b-away-form">'+ team_id +'</div><div id="b-away-goals-scored">'+ team_id +'</div><div id="'+ team_id +'-away-goals-conceded">'+ team_id +'</div>';
+            // bookkeepers.forEach(function(item) {
+            //     bookkeeper_details.innerHTML += '<div class="bookkeeper"><div>' + item.site_nice + '</div><div>' + 'Home ' + item.odds.h2h[1] + '</div><div>' + 'Draw ' + item.odds.h2h[2] + '</div><div>' + 'Away ' + item.odds.h2h[0] + '</div></div>';
+            });
+        });
 
 });
 
-// ==========================================================================================
+// =========================================================================================
+// ========== Random generated message for Landing Page ====================================
+// =========================================================================================
 
 $(function() {
 
@@ -172,8 +191,10 @@ $(function() {
     console.clear();
     var messenger = new Messenger($('#messenger'));
 
+    // =====================================================================================
+    //============= Header animation and fade in ===========================================
+    // =====================================================================================
 
-    //============= Header animation and fade in =======================
     $('.openWebsite').click(function() {
         $('.openWebsite').css({ 'transition': '0.3s', 'opacity': '0' });
         $('header').addClass('hideHeader');
@@ -193,6 +214,7 @@ $(function() {
 
     setTimeout(transformLogo, 3000);
 
+    // ===================================================================
     //=============  Toggle border bottom on navbar  =====================
 
     $('.navHeaders a').click(function() {
@@ -200,6 +222,8 @@ $(function() {
         $(this).addClass('bottomBorderNav');
     });
 
+
+    // ==================================================================
     //=============  Toggle side menu on-screen   =======================
 
     $('.toggleMenu').click(function() {
@@ -209,6 +233,7 @@ $(function() {
         $('.overlayBtn').toggleClass('moveRight');
     });
 
+    // ===========================================================================
     // ================== SHOW AND CANCEL CONTACT FORM ===========================
     function contact() {
         $('.contact-me').click(function() {
@@ -222,6 +247,7 @@ $(function() {
 
     contact()
 
+    // =================================================================
     //=============  Toggle sections on-screen   =======================
 
     $('.matches_btn').click(function() {
@@ -243,10 +269,18 @@ $(function() {
         $('.introduction').removeClass('toggleSections');
         $('.premier_league_table').addClass('toggleSections');
     });
-    //=============  Toggle game_details on-screen   =======================
+
+    // ======================================================================
+    //=============  Toggle Match details on-screen   =======================
 
     $('.toggleGameDetails').click(function() {
         $('.game_details').toggleClass('toggleDetails');
     });
 
+    // ========================================================================
+    //=============  Toggle Team Statistics on-screen   =======================
+
+    $('.toggleTeamStatistics').click(function() {
+        $('.team_Statistics').toggleClass('toggleStatistics');
+    });
 });
